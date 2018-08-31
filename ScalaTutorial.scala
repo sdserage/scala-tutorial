@@ -6,7 +6,6 @@ import scala.io.Source
 
 object ScalaTutorial {
   def main(args: Array[String]) {
-    
 
     /* Loops */
     // var i = 0
@@ -80,28 +79,30 @@ object ScalaTutorial {
     // printf("You guessed the secret number %d\n", 15)
 
     // Demonstrates modifying output
-    val name = "Derek"
-    val age = 39
-    val weight = 175.5
-    println(s"Hello $name")
-    println(f"I am ${age +1} and weigh $weight%.2f")
+    // val name = "Derek"
+    // val age = 39
+    // val weight = 175.5
+    // println(s"Hello $name")
+    // println(f"I am ${age +1} and weigh $weight%.2f")
     // %c // characters
     // %d // different integer types
     // %f // floating point types
     // %s // strings
 
     // Demonstrates offseting output
-    printf("'%5d'\n", 5)
-    printf("'%-5d'\n", 5)
+    // printf("'%5d'\n", 5)
+    // printf("'%-5d'\n", 5)
 
     // Demonstrates filling output
-    printf("'%.5f'\n", 3.14)
+    // printf("'%.5f'\n", 3.14)
 
     // filling output for strings
-    printf("'%-5s'\n", "hi")
-    printf("'%5s'\n", "hi")
+    // printf("'%-5s'\n", "hi")
+    // printf("'%5s'\n", "hi")
     // \b backspace
     // \n newline
     // \a alert // doesn't work, will research
+
+    
   }
 }
