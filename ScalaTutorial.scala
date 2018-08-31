@@ -1,8 +1,15 @@
+import scala.io.StdIn.{readLine, readInt}
+import scala.math._
+import scala.collection.mutable.ArrayBuffer
+import java.io.PrintWriter
+import scala.io.Source
+
 object ScalaTutorial {
   def main(args: Array[String]) {
-    var i = 0
+    
 
     /* Loops */
+    // var i = 0
 
     // while loop
     // while(i <= 10){
@@ -62,7 +69,17 @@ object ScalaTutorial {
     // printPrimes
 
     /* Handle input and output */
-
     
+    var numberGuess = 0
+
+    do {
+      print("Guess a number ")
+      numberGuess = readLine.toInt
+      // readInt readDouble readByte readShort readLong
+
+    } while(numberGuess != 15)
+
+    printf("You guessed the secret number %d\n", 15)
+
   }
 }
