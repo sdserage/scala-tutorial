@@ -70,16 +70,38 @@ object ScalaTutorial {
 
     /* Handle input and output */
     
-    var numberGuess = 0
+    // Use terminal input to output different information depending on given input
+    // var numberGuess = 0
+    // do {
+    //   print("Guess a number ")
+    //   numberGuess = readLine.toInt
+    //   // readInt readDouble readByte readShort readLong
+    // } while(numberGuess != 15)
+    // printf("You guessed the secret number %d\n", 15)
 
-    do {
-      print("Guess a number ")
-      numberGuess = readLine.toInt
-      // readInt readDouble readByte readShort readLong
+    // Demonstrates modifying output
+    val name = "Derek"
+    val age = 39
+    val weight = 175.5
+    println(s"Hello $name")
+    println(f"I am ${age +1} and weigh $weight%.2f")
+    // %c // characters
+    // %d // different integer types
+    // %f // floating point types
+    // %s // strings
 
-    } while(numberGuess != 15)
+    // Demonstrates offseting output
+    printf("'%5d'\n", 5)
+    printf("'%-5d'\n", 5)
 
-    printf("You guessed the secret number %d\n", 15)
+    // Demonstrates filling output
+    printf("'%.5f'\n", 3.14)
 
+    // filling output for strings
+    printf("'%-5s'\n", "hi")
+    printf("'%5s'\n", "hi")
+    // \b backspace
+    // \n newline
+    // \a alert // doesn't work, will research
   }
 }
