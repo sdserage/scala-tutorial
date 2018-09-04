@@ -161,12 +161,114 @@ object ScalaTutorial {
     // println("Get Sum " + getSum(1,2,3,4,5,6))
 
     // Recursion Example
-    def factorial(num: BigInt) : BigInt = {
-      if(num <= 1)
-        1
-      else
-        num * factorial(num - 1)
-    }
-    println("Factorial of 4 = " + factorial(4))
+    // def factorial(num: BigInt) : BigInt = {
+    //   if(num <= 1)
+    //     1
+    //   else
+    //     num * factorial(num - 1)
+    // }
+    // println("Factorial of 4 = " + factorial(4))
+
+    /* Arrays */
+
+    // // Create an Array of 20 indexes (all values defaulted to 0)
+    // val favNums = new Array[Int](20)
+    
+    // // Create an array of 2 strings
+    // val friends = Array("Bob", "Tom")
+
+    // // Reassign index
+    // friends(0) = "Sue"
+
+    // // Print specific index
+    // println("Best friends " + friends(0))
+    
+    // // ArrayBuffer for arrays of indeterminate length
+    // val friends2 = ArrayBuffer[String]()
+
+    // // Insert
+    // friends2.insert(0, "Phil")
+
+    // // 
+    // friends2 += "Mark"
+
+    // friends2 ++= Array("Susy", "Paul")
+
+    // // Insert mulitiple
+    // friends2.insert(1, "Mike", "Sally", "Sam", "Mary", "Sue")
+
+    // // Remove
+    // friends2.remove(1,2)
+
+    // Print all the strings
+    // var friend : String = " "
+    // for(friend <- friends2)
+    //   println(friend)
+
+    // Reassign and print each each value in an array (Leave uncommented to test favNums further)
+    // for(j <- 0 to favNums.length - 1) {
+    //   favNums(j) = j
+    //  // Next line can be commented out if you just want to mutate the array
+      // println(favNums(j))
+    //}
+
+    // // Double each value
+    // val favNumsTimes2 = for(num <- favNums) yield 2 * num
+    // favNumsTimes2.foreach(println)
+
+    // // Get only numbers divisible by 4
+    // var favNumsDiv4 = for(num <- favNums if num % 4 == 0) yield num
+    // favNumsDiv4.foreach(println)
+
+    // // Multidimensional array
+    // var multiTable = Array.ofDim[Int](10, 10)
+    // for(i <- 0 to 9){
+    //   for(j <- 0 to 9){
+    //     multiTable(i)(j) = i * j
+    //   }
+    // }
+    // for(i <- 0 to 9){
+    //   for(j <- 0 to 9){
+    //     printf("%d * %d = %d\n", i, j, multiTable(i)(j))
+    //   }
+    // }
+    
+    // // Get sum
+    // println("Sum: " + favNums.sum)
+
+    // // Get min
+    // println("Min: " + favNums.min)
+
+    // // Get max
+    // println("Max: " + favNums.max)
+
+    // // Sort descending
+    // val sortedNums = favNums.sortWith(_>_)
+
+    // // Sort ascending
+    // val sortedNums2 = favNums.sortWith(_<_)
+
+    // // Convert into string with commas
+    // println(sortedNums.deep.mkString(", "))
+
+    /* Maps */
+    // Create a map with the keys 'Manager' and 'Secretary'
+    // val employees = Map("Manager" -> "Bob Smith",
+    //   "Secretary" -> "Sue Brown")
+    // // Check if there is a Manager key and if there is print all of the managers
+    // if(employees.contains("Manager"))
+    //   printf("Manager: %s\n", employees("Manager"))
+    // // Create a map of customers with unique numbers as keys
+    // val customers = collection.mutable.Map(100 -> "Paul Smith",
+    //   101 -> "Sally Smith")
+    // printf("Cust 1: %s\n", customers(100))
+    // // Assign/reassign customers and then print them out
+    // customers(100) = "Tom Marks"
+    // customers(102) = "Megan Swift"
+    // for((k,v) <- customers)
+    //   printf("%d: %s\n", k, v)
+
+    /* Tuples */
+    
   }
 }
