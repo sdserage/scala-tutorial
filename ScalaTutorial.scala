@@ -255,13 +255,16 @@ object ScalaTutorial {
     // Create a map with the keys 'Manager' and 'Secretary'
     // val employees = Map("Manager" -> "Bob Smith",
     //   "Secretary" -> "Sue Brown")
+
     // // Check if there is a Manager key and if there is print all of the managers
     // if(employees.contains("Manager"))
     //   printf("Manager: %s\n", employees("Manager"))
+
     // // Create a map of customers with unique numbers as keys
     // val customers = collection.mutable.Map(100 -> "Paul Smith",
     //   101 -> "Sally Smith")
     // printf("Cust 1: %s\n", customers(100))
+
     // // Assign/reassign customers and then print them out
     // customers(100) = "Tom Marks"
     // customers(102) = "Megan Swift"
@@ -270,5 +273,14 @@ object ScalaTutorial {
 
     /* Tuples */
     
+    // Create a tuple and print values from it
+    var tupleMarge = (105, "Marge Simpson", 10.25)
+    printf("%s owes us $%.2f\n", tupleMarge._2, tupleMarge._3)
+
+    // Print each value in a tuple (without knowing how big it is)
+    tupleMarge.productIterator.foreach{i => println(i)}
+
+    // Print a tuple as a string
+    print(tupleMarge.toString())
   }
 }
