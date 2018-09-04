@@ -105,26 +105,68 @@ object ScalaTutorial {
 
     /* Strings */
 
-    var randSent = "I saw a dragon fly by"
+    // var randSent = "I saw a dragon fly by"
     
-    // Display index of string
-    println("3rd index :" + randSent(3))
+    // // Display index of string
+    // println("3rd index :" + randSent(3))
 
-    // Display length of string
-    println("String length: " + randSent.length)
+    // // Display length of string
+    // println("String length: " + randSent.length)
 
-    // Concatonate string
-    println(randSent.concat(" and explode"))
+    // // Concatonate string
+    // println(randSent.concat(" and explode"))
 
-    // Compare strings
-    println("Are strings equal " + "I saw a dragon".equals(randSent))
+    // // Compare strings
+    // println("Are strings equal " + "I saw a dragon".equals(randSent))
     
-    // Get index of first letter of substring
-    println("dragon starts at index " + randSent.indexOf("dragon"))
+    // // Get index of first letter of substring
+    // println("dragon starts at index " + randSent.indexOf("dragon"))
     
-    // Convert string to an array
-    val randSentArray = randSent.toArray
-    for(v <- randSentArray)
-      println(v)
+    // // Convert string to an array
+    // val randSentArray = randSent.toArray
+    // for(v <- randSentArray)
+    //   println(v)
+
+    /* Functions */
+
+    /*
+      Function basic layout:
+
+      def funcName (param1: dataType, param2: dataType) : returnType = {
+        function body
+        return value toReturn
+      }
+    */
+
+    // Simple number sum function * Note: 'return' can be used but isn't needed, Scala will return value of last line
+    // def getSum(num1: Int = 1, num2: Int = 1): Int = {
+    //   num1 + num2
+    // }
+    // println("5 + 4 = " + getSum(5, 4))
+
+    // Has no return value
+    // def sayHi() : Unit = {
+    //   println("Hi, how are you?")
+    // }
+    // sayHi
+
+    // Function takes any number of arguments of the same type
+    // def getSum(args: Int*) : Int = {
+    //   var sum : Int = 0
+    //   for(num <- args){
+    //     sum += num
+    //   }
+    //   sum
+    // }
+    // println("Get Sum " + getSum(1,2,3,4,5,6))
+
+    // Recursion Example
+    def factorial(num: BigInt) : BigInt = {
+      if(num <= 1)
+        1
+      else
+        num * factorial(num - 1)
+    }
+    println("Factorial of 4 = " + factorial(4))
   }
 }
