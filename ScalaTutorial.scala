@@ -103,6 +103,28 @@ object ScalaTutorial {
     // \n newline
     // \a alert // doesn't work, will research
 
+    /* Strings */
+
+    var randSent = "I saw a dragon fly by"
     
+    // Display index of string
+    println("3rd index :" + randSent(3))
+
+    // Display length of string
+    println("String length: " + randSent.length)
+
+    // Concatonate string
+    println(randSent.concat(" and explode"))
+
+    // Compare strings
+    println("Are strings equal " + "I saw a dragon".equals(randSent))
+    
+    // Get index of first letter of substring
+    println("dragon starts at index " + randSent.indexOf("dragon"))
+    
+    // Convert string to an array
+    val randSentArray = randSent.toArray
+    for(v <- randSentArray)
+      println(v)
   }
 }
