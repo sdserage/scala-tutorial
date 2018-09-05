@@ -343,6 +343,13 @@ object ScalaTutorial {
     }
     printf("4 * 100 = %.1f\n", multIt(times4, 100))
 
+    // Closure example
+    val divisorVal = 5
+
+    val divisor5 = (num: Double) => num/divisorVal
+
+    println("5/5 = " + divisor5(5.0))
+
   } // END OF MAIN
 
   // Higher Order Functions
