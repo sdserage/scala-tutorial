@@ -298,6 +298,12 @@ object ScalaTutorial {
     // Use overridden toString
     println(whiskers.toString)
 
+    /* Inheritance */
+
+    val spike = new Dog("Spike", "Woof", "Grrrrr")
+    spike.setName("Spike")
+    println(spike.toString)
+
   } // END OF MAIN
 
   class Animal(var name: String, var sound: String){
@@ -336,4 +342,22 @@ object ScalaTutorial {
     private var idNumber = 0
     private def newIdNum = {idNumber += 1; idNumber}
   }
+
+  class Dog(name: String, sound: String, growl: String) extends Animal(name, sound){
+    def this(name: String, sound: String){
+      this("No Name", sound, "No Growl")
+      this.setName(name)
+    }
+    def this(name: String){
+      this("No Name", "No Sound", "No Growl")
+      this.setName(name)
+    }
+    def this(){
+      this("No Name", "No Sound", "No Growl")
+    }
+    override def toString(): String = {
+      "%s with the id %d says %s or %s".format(this.name, this.id, this.sound, this.growl)
+    }
+  }
+
 } // END OF ScalaTutorial
