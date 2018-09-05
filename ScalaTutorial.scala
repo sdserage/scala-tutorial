@@ -352,18 +352,30 @@ object ScalaTutorial {
 
     /* File IO */
 
-    val writer = new PrintWriter("test.txt")
-    writer.write("Just some random text\nSome more random text")
-    writer.close()
+    // val writer = new PrintWriter("test.txt")
+    // writer.write("Just some random text\nSome more random text")
+    // writer.close()
 
-    val textFromFile = Source.fromFile("test.txt", "UTF-8")
+    // val textFromFile = Source.fromFile("test.txt", "UTF-8")
 
-    val lineIterator = textFromFile.getLines
+    // val lineIterator = textFromFile.getLines
 
-    for(line <- lineIterator)
-      println(line)
+    // for(line <- lineIterator)
+    //   println(line)
 
-    textFromFile.close()
+    // textFromFile.close()
+
+    /* Exception Handling */
+
+    def divideNums(num1: Int, num2: Int) = try {
+      (num1/num2)
+    } catch {
+      case ex: java.lang.ArithmeticException => "Can't divide by zero"
+    } finally {
+      // clean up after exception
+    }
+
+    println("3/0 = " + divideNums(3,0))
   } // END OF MAIN
 
   // Traits
