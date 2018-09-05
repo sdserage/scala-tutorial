@@ -273,14 +273,67 @@ object ScalaTutorial {
 
     /* Tuples */
     
-    // Create a tuple and print values from it
-    var tupleMarge = (105, "Marge Simpson", 10.25)
-    printf("%s owes us $%.2f\n", tupleMarge._2, tupleMarge._3)
+    // // Create a tuple and print values from it
+    // var tupleMarge = (105, "Marge Simpson", 10.25)
+    // printf("%s owes us $%.2f\n", tupleMarge._2, tupleMarge._3)
 
-    // Print each value in a tuple (without knowing how big it is)
-    tupleMarge.productIterator.foreach{i => println(i)}
+    // // Print each value in a tuple (without knowing how big it is)
+    // tupleMarge.productIterator.foreach{i => println(i)}
 
-    // Print a tuple as a string
-    print(tupleMarge.toString())
+    // // Print a tuple as a string
+    // print(tupleMarge.toString())
+
+    /* Classes */
+
+    // Create an animal and then set its values
+    val rover = new Animal
+    rover.setName("Rover")
+    rover.setSound("Woof")
+    printf("%s says %s\n", rover.getName, rover.getSound)
+
+    // Create an animal with values passed in to begin with
+    val whiskers = new Animal("Whiskers", "Meow")
+    println(s"${whiskers.getName} with id ${whiskers.id} says ${whiskers.sound}")
+
+    // Use overridden toString
+    println(whiskers.toString)
+
+  } // END OF MAIN
+
+  class Animal(var name: String, var sound: String){
+    // Default contructor
+    this.setName(name)
+    val id = Animal.newIdNum
+
+    def getName(): String = name
+    def getSound(): String = sound
+    def setName(name: String){
+      if(!(name.matches(".*\\d+.*")))
+        this.name = name
+      else
+        this.name = "No Name"
+    }
+    def setSound(sound: String){
+      this.sound = sound
+    }
+    // Constructor with only name passed in
+    def this(name: String){
+      this("No Name", "No Sound")
+      this.setName(name)
+      this.setSound(sound)
+    }
+    // Constructor with no name or sound passed in
+    def this(){
+      this("No Name", "No Sound")
+    }
+    // Override toString
+    override def toString(): String = {
+      "%s with the id %d says %s".format(this.name, this.id, this.sound)
+    }
   }
-}
+  // Companion object (Notice that it is outside of the Animal class)
+  object Animal {
+    private var idNumber = 0
+    private def newIdNum = {idNumber += 1; idNumber}
+  }
+} // END OF ScalaTutorial
