@@ -306,23 +306,49 @@ object ScalaTutorial {
 
     /* Abstract Classes */
 
-    val fang = new Wolf("Fang")
-    fang.moveSpeed = 36.0
-    println(fang.move)
+    // val fang = new Wolf("Fang")
+    // fang.moveSpeed = 36.0
+    // println(fang.move)
+
+    /* Traits */
+
+    val superman = new Superhero("Superman")
+    println(superman.fly)
+    println(superman.hitByBullet)
+    println(superman.ricochet(2500))
 
   } // END OF MAIN
 
+  // Traits
+
+  trait Flyable {
+    def fly: String
+  }
+
+  trait BulletProof {
+    def hitByBullet: String
+    def ricochet(startSpeed: Double): String = {
+      "The bullet ricochets at a speed of %.1f ft/sec".format(startSpeed * .75)
+    }
+  }
+
+  class Superhero(val name: String) extends Flyable with BulletProof {
+    def fly = "%s flys through the air".format(this.name)
+
+    def hitByBullet = "The bullet bounces off of %s".format(this.name)
+  }
+
   // Abstract Classes
 
-  abstract class Mammal(val name: String){
-    var moveSpeed: Double
-    def move: String
-  }
+  // abstract class Mammal(val name: String){
+  //   var moveSpeed: Double
+  //   def move: String
+  // }
 
-  class Wolf(name: String) extends Mammal(name){
-    var moveSpeed = 35.0
-    def move = "The wolf %s runs %.2f mph".format(this.name, this.moveSpeed)
-  }
+  // class Wolf(name: String) extends Mammal(name){
+  //   var moveSpeed = 35.0
+  //   def move = "The wolf %s runs %.2f mph".format(this.name, this.moveSpeed)
+  // }
 
   // Classes and Inheritance
 
