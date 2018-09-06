@@ -6,7 +6,6 @@ import scala.io.Source
 
 object ScalaTutorial {
   def main(args: Array[String]) {
-
     if (args.length > 0) {
       val mode: String = args(0)
 
@@ -24,10 +23,10 @@ object ScalaTutorial {
         case "higher-order-functions" => higherOrderFunctions
         case "file-IO" => fileIO
         case "exception-handling" => exceptionHandling
-        case _ => println("error")
+        case _ => displayOptions(true)
       }
     } else {
-      println("there's no arg")
+      displayOptions(false)
     }
   } // END OF MAIN
 
@@ -511,6 +510,28 @@ object ScalaTutorial {
     }
 
     println("3/0 = " + divideNums(3,0))
+  }
+
+  def displayOptions(nonValidArg: Boolean) {
+    val options = Array (
+      "loops",
+      "handle-input/output",
+      "strings",
+      "functions",
+      "arrays",
+      "maps",
+      "tuples",
+      "classes",
+      "abstract-classes",
+      "traits",
+      "higher-order-functions",
+      "exception-handling"
+    )
+    if (nonValidArg) {
+      println("The argument you entered in was invalid.")
+    }
+      println("Please run this tutorial with one of the following arguments:")
+      options.map(option => println(option))
   }
 
 } // END OF ScalaTutorial
